@@ -16,7 +16,7 @@ namespace TravelClient.Models
 
         public static List<City> GetCities()
         { 
-            var apiCallTask = ApiHelper.GetAll();
+            var apiCallTask = ApiHelper.GetAllCitiesAsync();
             var result = apiCallTask.Result;
 
             JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
