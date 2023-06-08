@@ -13,16 +13,20 @@ namespace TravelClient.Models
         public int UserId { get; set; } // FOREIGN KEY
         public int CityId { get; set; } // FOREIGN KEY
 
-        public static List<Review> GetReviews()
-        {
-            var apiCallTask = ApiHelper.GetAll();
-            var result = apiCallTask.Result;
 
-            JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
-            List<Review> reviewList = JsonConvert.DeserializeObject<List<Review>>(jsonResponse.ToString());
+        // This method uses the method defined in the API helper to grab all the reviews from the database
+        // The actual API call is made in the API helper (Have not made that method yet!)
 
-            return reviewList;
-        }
+        // public static List<Review> GetReviews()
+        // {
+        //     var apiCallTask = ApiHelper.GetAllReviewsAsync();
+        //     var result = apiCallTask.Result;
+
+        //     JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
+        //     List<Review> reviewList = JsonConvert.DeserializeObject<List<Review>>(jsonResponse.ToString());
+
+        //     return reviewList;
+        // }
 
 
     }
