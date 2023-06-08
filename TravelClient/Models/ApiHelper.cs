@@ -5,11 +5,13 @@ namespace TravelClient.Models
 {
     public class ApiHelper
     {
-        public static async Task<string> GetAll()
+        public static async Task<string> GetAllCitiesAsync()
         {
             RestClient client = new RestClient("http://localhost:5000/");
             RestRequest request = new RestRequest($"api/cities", Method.Get);
             RestResponse response = await client.GetAsync(request);
+
+
             return response.Content;
         }
     }
