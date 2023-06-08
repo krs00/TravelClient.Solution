@@ -7,6 +7,6 @@
 <ol>
 @foreach (City city in Model)
 {
-  <li><strong>@city.Name</strong> the @city.Country | <a href="/Cities/Details/@(city.CityId)">View Details</a></li>
+  <li><strong>@city.Name</strong>,  @city.Country | <a href="/Cities/Details/@(city.CityId)">View Details</a></li>
 }
 </ol>
